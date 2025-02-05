@@ -4,7 +4,6 @@ import { Avatar, Flex } from "antd";
 import { useRouter } from "next/router";
 
 const PostQueryView = (info: DiscussionNotification) => {
-  const router = useRouter();
   return {
     message: (
       <Flex justify="space-between">
@@ -31,9 +30,7 @@ const PostQueryView = (info: DiscussionNotification) => {
         )}
       </>
     ),
-    onClick: () => {
-      router.push(`${info.targetLink}`);
-    },
+    targetLink: info.targetLink,
   };
 };
 
